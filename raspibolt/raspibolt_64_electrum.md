@@ -77,18 +77,20 @@ Electrum Personal Server uses the Bitcoin Core wallet with "watch-only" addresse
   ```
 
   * Add your wallet master public keys or watch-only addresses to the `[master-public-keys]` and `[watch-only-addresses]` sections. Master public keys for an Electrum wallet can be found in the Electrum client menu `Wallet` -> `Information`.
+  > Note the format when adding settings - name followed by value
 
   * In `[bitcoin-rpc]`, uncomment and complete the lines.  
     ```
     rpc_user = raspibolt
     rpc_password = [PASSWORD_B]
     ```
+  > If you're still running on the testnet, update the `port = 18332`
 
   * In `[electrum-server]`, change the listening `host` to `0.0.0.0`, so that you can reach it from a remote computer. The firewall only accepts connections from within the home network, not from the internet.  
     ```
     host = 0.0.0.0
     ```
-
+    
 * Save and exit
 
 * Install Electrum Personal Server
@@ -140,6 +142,7 @@ On your regular computer, configure Electrum to use your RaspiBolt:
   
 * This can also be achived by starting the Electrum wallet with the following command line arguments:  
   `--oneserver --server 192.168.0.20:50002:s`
+  > If you're running against testnet add `--testnet` to the command above, else the Electrum Wallet will remain disconnected
 
 ### Automate startup
 If everything works as expected, we will now automate the start of Electrum Personal Server on the RaspiBolt.
