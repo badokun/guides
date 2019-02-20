@@ -18,11 +18,19 @@ Your RaspiBolt will greet you with a quick system summary on login:
 
 [![MotD system overview](images/60_status_overview.png)](raspibolt_61_system-overview.md)
 
-## [**Auto unlock LND on startup**](raspibolt_6A_auto-unlock.md)
+## [Auto unlock LND on startup](raspibolt_6A_auto-unlock.md)
 
 *Difficulty: medium*
 
 Manually unlocking the LND wallet every time the system starts is not really feasible if your RaspiBolt is meant to run reliably somewhere in a closet. This script automatically unlocks the wallet on startup or service-restart. This comes at a minimal security cost, however, as the password needs to be stored on the device.
+
+## [**Anonymous node with Tor**](raspibolt_69_tor.md)
+
+*Difficulty: medium*
+
+Route all your Bitcoin traffic over the Tor network to stay anonymous and avoid leaking private information like your public IP address.
+
+[![Tor](images/69_tor.png)](raspibolt_69_tor.md)
 
 ## [**Electrum Personal Server**](raspibolt_64_electrum.md)
 
@@ -32,17 +40,19 @@ The RaspiBolt is the perfect trustless Bitcoin backend for your regular on-chain
 
 [![Electrum](images/60_eps_electrumwallet.png)](raspibolt_64_electrum.md)
 
+## [**Zap Desktop Lightning Wallet**](raspibolt_71_zap.md)
+
+*Difficulty: easy*
+
+The Zap desktop app (https://github.com/LN-Zap/zap-desktop) is a cross platform Lightning Network wallet focused on user experience and ease of use.
+
+![Zap Desktop](images/71_zap1_cropped.png)
+
+
 ## [**Performance Monitoring**](raspibolt_71_monitoring.md)
-
 *Difficulty: intermediate*
-
 Adding a Grafana Web UI to monitor your Raspberri Pi for 
-performance metrics. 
-
 Get a useful insights on Bitcoin and Lightning metrics
-
-[![Grafana](images/71_grafana.png)](raspibolt_71_monitoring.md)
-
 ## [**Shango Mobile Wallet**](raspibolt_68_shango.md)
 
 *Difficulty: intermediate*
@@ -50,14 +60,6 @@ Get a useful insights on Bitcoin and Lightning metrics
 The iOS & Android app Shango provides a neat interface for the RaspiBolt, to manage peers & channels, make payments and create invoices.
 
 [![Electrum](images/60_shango.png)](raspibolt_68_shango.md)
-
-## [**Anonymous node with Tor**](raspibolt_69_tor.md)
-
-*Difficulty: medium*
-
-Route all your Bitcoin traffic over the Tor network to stay anonymous and avoid leaking private information like your public IP address.
-
-[![Tor](images/69_tor.png)](raspibolt_69_tor.md)
 
 ## [**Pimp the command line**](raspibolt_62_commandline.md)
 
@@ -79,7 +81,7 @@ Difficulty: easy
 
 In case your SD card gets corrupted or you brick your node, it's handy to have a quick recovery image at hand. It's not a full backup solution, but allows a system recovery.
 
-## [**Additional scripts: show balance & channels**](raspibolt_67_additional-scripts.md)
+## [Additional scripts: show balance & channels](raspibolt_67_additional-scripts.md)
 
 Difficulty: easy
 
