@@ -221,6 +221,23 @@ Now your Lightning node is ready. To use it in testnet, you can get some free te
 * Monitor your transaction (the faucet shows the TX ID) on a Blockchain explorer:  
   https://testnet.smartbit.com.au
 
+### Monitor transactions when opening\closing channels
+
+```
+lncli --network=testnet pendingchannels
+```
+Grab the `channel_point` value up to the colon (:)
+```
+"channel_point": "941dc62da2220e12a3e5fd5101742e59acccf889aa584d87c07cc2e5d27fdb42:0",
+```
+Find the transaction using the `bitcoin-cli`
+```
+bitcoin-cli getrawtransaction 941dc62da2220e12a3e5fd5101742e59acccf889aa584d87c07cc2e5d27fdb42 1
+```
+
+Look at the `confirmations` field
+
+
 ### LND in action
 As soon as your funding transaction is mined and confirmed, LND will start to open and maintain channels. This feature is called "Autopilot" and is configured in the "lnd.conf" file. If you would like to maintain your channels manually, you can disable the autopilot.
 
