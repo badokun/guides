@@ -178,11 +178,6 @@ Once you get familiar with the cli you may want to switch over to a Web based in
 
 As the `admin` user, execute the following commands
 
-### !! [[ Remove this ] Add github's SSH key
-
-Follow the steps outlined [here](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-to generate and then [here](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account) to add it to your github profile.
-
 ```bash
 cd
 sudo apt-get update
@@ -199,30 +194,17 @@ npm --version
 
 Install Spark Wallet
 
-#### From source
 ```bash
-cd && mkdir spark && cd spark
-git clone https://github.com/shesek/spark-wallet && cd spark-wallet
+sudo su
+npm install -g spark-wallet --unsafe-perm=true --allow-root
+exit
 ```
 
-Get the latest [release version](https://github.com/shesek/spark-wallet/releases)
-
-```bash
-git checkout v0.2.5
-npm install
-```
+Run Spark Wallet by replace the user `admin` and `PASSWORD` with your own and executing the following
 
 ```bash
 sudo su - bitcoin
-cd /home/admin/spark/spark-wallet
-npm start --ln-path /mnt/hdd/lightning
-```
-
-#### Directly
-
-```bash
-npm install -g spark-wallet
-
+spark-wallet --ln-path /mnt/hdd/lightning -i 0.0.0.0 --login admin:PASSWORD
 ```
 
 ### Open firewall
