@@ -172,6 +172,66 @@ lightning-cli getinfo
 
 > You can find public nodes on the [1ml.com](https://1ml.com/node?order=capacity) website
 
+## Spark Web UI
+
+Once you get familiar with the cli you may want to switch over to a Web based interface, e.g. [Spark guide](https://medium.com/@notgrubles/spark-a-new-gui-for-c-lightning-2cf2f024500c) adapted for a RaspiBolt installation. GitHub project is located [here](https://github.com/shesek/spark-wallet)
+
+As the `admin` user, execute the following commands
+
+### !! [[ Remove this ] Add github's SSH key
+
+Follow the steps outlined [here](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+to generate and then [here](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account) to add it to your github profile.
+
+```bash
+cd
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install nodejs
+sudo npm install -g npm
+```
+
+Confirm `npm` version is at least `6.8.0`. If it's not look at this [guide](https://github.com/maddox/harmony-api/issues/84#issuecomment-357018266)
+
+```bash
+npm --version
+```
+
+Install Spark Wallet
+
+#### From source
+```bash
+cd && mkdir spark && cd spark
+git clone https://github.com/shesek/spark-wallet && cd spark-wallet
+```
+
+Get the latest [release version](https://github.com/shesek/spark-wallet/releases)
+
+```bash
+git checkout v0.2.5
+npm install
+```
+
+```bash
+sudo su - bitcoin
+cd /home/admin/spark/spark-wallet
+npm start --ln-path /mnt/hdd/lightning
+```
+
+#### Directly
+
+```bash
+npm install -g spark-wallet
+
+```
+
+### Open firewall
+
+```bash
+sudo su
+sudo ufw allow from 192.168.1.0/24 to any port 9737 comment 'allow spark from Local LAN'
+```
+
 ## Upgrading
 
 ```bash
