@@ -165,6 +165,9 @@ Bitcoin Core is starting and we now need to check if all connections are truly r
   ```
   $ curl icanhazip.com
   ```
+
+> Depending on your router configuration you may get an IPv6 address, in that case run `curl ipv4.icanhazip.com`
+
 * and then verify that it is not used as `localaddr` by Bitcoin.
   ```
   $ bitcoin-cli getpeerinfo | grep  local
