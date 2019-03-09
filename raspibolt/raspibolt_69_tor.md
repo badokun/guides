@@ -55,7 +55,7 @@ For additional reference, the original instructions are available on the [Tor pr
   $ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
   ```
 
-* The latest version of Tor can now be installed. While not required, `tor-arm` provides a dashboard that you might find useful.
+* The latest version of Tor can now be installed. While not required, `tor-arm` provides a dashboard that you might find useful. Once installation is complete you can view the dashboard by running `sudo -u debian-tor arm` as the `admin` user
   ```
   $ sudo apt update
   $ sudo apt install tor tor-arm
